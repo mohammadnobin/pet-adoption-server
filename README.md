@@ -1,3 +1,5 @@
+<!-- make a readme file for discrib all feture -->
+
 # 🐾 Pet Adoption Platform - Backend (Server Side)
 
 This is the backend of the **Pet Adoption Platform**, a Node.js + Express API that powers the pet adoption, donation, and authentication logic of the platform.
