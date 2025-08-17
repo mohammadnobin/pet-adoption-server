@@ -317,6 +317,23 @@ async function run() {
     // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::User all API create here end::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::All Pets api making here start::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     //::::::::::::::::::: pet get
+
+    app.get("/api/pets/latest", async (req, res) => {
+  try {
+    const pets = await petsCollection
+      .find({ adopted: "notAdopted" }) // শুধুমাত্র non-adopted pets
+      .sort({ addedAt: -1 }) // newest first
+      .limit(6)
+      .toArray();
+
+    res.json(pets);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
+
     app.get("/pets", async (req, res) => {
       try {
         const { page = 1, limit = 6, search = "", category = "" } = req.query;
