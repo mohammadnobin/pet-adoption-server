@@ -98,7 +98,7 @@ async function run() {
         res.status(500).send({ message: "Error fetching users" });
       }
     });
-    // user make admin and remove admin
+    // user make admin and remove adminn
     app.patch(
       "/users/:id/role",
       verifyFbToken,
