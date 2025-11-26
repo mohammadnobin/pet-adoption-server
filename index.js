@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 // all middlewere here
 app.use(cors());
 app.use(express.json());
+// all middlewere here
 const decodedKey = Buffer.from(process.env.FB_SERVICE_KEY, "base64").toString(
   "utf8"
 );
