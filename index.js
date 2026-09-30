@@ -79,7 +79,7 @@ async function run() {
     };
     // cunstom middlewares
 
-    // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::Admin all API create here start::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::Admin all API create here start::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     // All user gets for Admin
     app.get("/users/search", verifyFbToken, verifyAdmin, async (req, res) => {
       const { searchparams } = req.query;
